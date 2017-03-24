@@ -30,6 +30,7 @@ requirements:
   - sip ==4.19
   - QtPy ==1.2.0
   - h5py ==2.6.0
+  - coverage  
 
 test:
   source_files:
