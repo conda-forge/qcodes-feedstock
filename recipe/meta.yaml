@@ -1,6 +1,6 @@
 {% set name = "qcodes" %}
-{% set version = "0.1.11" %}
-{% set sha256 = "9cac506829f866aac98e772c613686607dce95b5aece13280793dffea36f32f1" %}
+{% set version = "0.3.0" %}
+{% set sha256 = "8a641e7e66fb3bc21114704e84e8ad77983161c2602f10b861461eb0deda2de3" %}
 
 package:
   name: {{ name|lower }}
