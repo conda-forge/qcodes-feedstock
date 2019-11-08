@@ -1,32 +1,40 @@
-{% set name = "qcodes" %}
-{% set version = "0.1.11" %}
-{% set sha256 = "9cac506829f866aac98e772c613686607dce95b5aece13280793dffea36f32f1" %}
+{% set version = "0.7.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: qcodes
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.zip
   url: https://github.com/QCoDeS/Qcodes/archive/v{{ version }}.zip
-  sha256: {{ sha256 }}
+  sha256: 78ab215a372847da435c1b3e11b84935dbd5ef12d45f99965f8c0cdec544c9ec
 
 build:
   number: 0
-  skip: true  # [py<35]
-  script: python -m pip install --no-deps --ignore-installed .
+  skip: True  # [py27]
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
     - python
     - pip
   run:
-  - numpy>=1.10,<1.14
-  - pyvisa>=1.8
-  - h5py>=2.6
-  - websockets>=3.2
-  - jsonschema
-  - pyzmq
+    - python
+    - numpy >=1.10
+    - pyvisa >=1.9.1
+    - h5py >=2.6
+    - websockets >=7.0
+    - jsonschema
+    - ruamel.yaml
+    - pyzmq
+    - wrapt
+    - pandas
+    - tabulate
+    - tqdm
+    - applicationinsights
+    - matplotlib >=2.2.3
+    - dataclasses  # [py36]
+    - requirements-parser
+    - importlib-metadata  # [py<38]
 
 test:
   imports:
@@ -35,7 +43,7 @@ test:
 about:
   home: http://qcodes.github.io/Qcodes/
   license: MIT
-  # license_file: LICENSE.md
+  license_file: LICENSE
   summary: 'Modular data acquisition and analysis framework'
   description: |
     QCoDeS is a Python-based data acquisition framework developed 
