@@ -32,9 +32,9 @@ requirements:
     - tqdm
     - applicationinsights
     - matplotlib >=2.2.3
-    - dataclasses  # [py36]
+    - dataclasses  # [py<37]
     - requirements-parser
-    - importlib-metadata  # [py<38]
+    - importlib_metadata  # [py<38]
 
 test:
   imports:
