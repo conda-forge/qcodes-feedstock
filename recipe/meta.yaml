@@ -9,7 +9,7 @@ source:
   sha256: 7ba0a3571f74c69ce567f82a227675aa7129b300598f7eaa358ad817d665ce26
 
 build:
-  number: 0
+  number: 1
   skip: True  # [py27]
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
@@ -31,7 +31,7 @@ requirements:
     - tabulate
     - tqdm
     - applicationinsights
-    - matplotlib >=2.2.3
+    - matplotlib-base >=2.2.3
     - dataclasses  # [py<37]
     - requirements-parser
     - importlib_metadata  # [py<38]
