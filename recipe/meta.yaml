@@ -27,6 +27,7 @@ requirements:
     - ruamel.yaml
     - pyzmq
     - wrapt
+    - opencensus
     - pandas
     - tabulate
     - tqdm
