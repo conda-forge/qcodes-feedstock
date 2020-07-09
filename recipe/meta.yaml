@@ -35,6 +35,7 @@ requirements:
     - dataclasses  # [py<37]
     - requirements-parser
     - importlib_metadata  # [py<38]
+    - opencensus-ext-azure
 
 test:
   imports:
