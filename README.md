@@ -5,7 +5,7 @@ Home: http://qcodes.github.io/Qcodes/
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Modular data acquisition and analysis framework
 
