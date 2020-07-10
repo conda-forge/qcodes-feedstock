@@ -36,6 +36,7 @@ requirements:
     - requirements-parser
     - importlib_metadata  # [py<38]
     - opencensus-ext-azure
+    - typing_extensions
 
 test:
   imports:
