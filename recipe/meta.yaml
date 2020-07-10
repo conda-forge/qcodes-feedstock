@@ -30,12 +30,11 @@ requirements:
     - pandas
     - tabulate
     - tqdm
-    - applicationinsights
+    - opencensus-ext-azure
     - matplotlib >=2.2.3
     - dataclasses  # [py<37]
     - requirements-parser
     - importlib_metadata  # [py<38]
-    - opencensus-ext-azure
     - typing_extensions
 
 test:
