@@ -9,7 +9,7 @@ source:
   sha256: 55718878f2002ac7f46d98c44b8c54a8a0c2739dac52d9035e1ec4dad1a41df0
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py27]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -31,7 +31,7 @@ requirements:
     - tabulate
     - tqdm
     - opencensus-ext-azure
-    - matplotlib >=2.2.3
+    - matplotlib-base >=2.2.3
     - dataclasses  # [py<37]
     - requirements-parser
     - importlib_metadata  # [py<38]
