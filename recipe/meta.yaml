@@ -46,7 +46,7 @@ test:
     - qcodes
 
 about:
-  home: http://qcodes.github.io/Qcodes/
+  home: http://qcodes.github.io/Qcodes
   license: MIT
   license_file: LICENSE
   summary: Modular data acquisition and analysis framework
@@ -57,7 +57,7 @@ about:
     nanoelectronic device experiments, it is not inherently limited 
     to such experiments, and can be used anywhere a system with many 
     degrees of freedom is controllable by computer.
-  doc_url: http://qcodes.github.io/Qcodes/
+  doc_url: http://qcodes.github.io/Qcodes
   dev_url: https://github.com/QCoDeS/Qcodes
 
 extra:
