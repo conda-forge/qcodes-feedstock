@@ -1,7 +1,7 @@
 About qcodes
 ============
 
-Home: http://qcodes.github.io/Qcodes/
+Home: http://qcodes.github.io/Qcodes
 
 Package license: MIT
 
