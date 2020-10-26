@@ -1,4 +1,4 @@
-{% set version = "0.18.0" %}
+{% set version = "0.19.1" %}
 
 package:
   name: qcodes
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/QCoDeS/Qcodes/archive/v{{ version }}.tar.gz
-  sha256: ebe62b5d36688a99d1e9e837f5809ac71993a7b3927aecd6207b430e04c025fa
+  sha256: 42b1160d9e2543b4310babe2a3bc070178630b701c69b42b7b710603ff8328f5
 
 build:
   number: 0
