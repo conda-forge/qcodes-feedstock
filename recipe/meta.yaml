@@ -35,7 +35,7 @@ requirements:
     - opencensus-ext-azure >=1.0.4
     - matplotlib >=2.2.3
     - requirements-parser
-    - importlib_metadata <3.0.0 # [py<38]
+    - importlib_metadata <3.0.0  # [py<38]
     - typing_extensions
     - ipywidgets
     - packaging >=20.0
