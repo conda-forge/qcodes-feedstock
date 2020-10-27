@@ -26,7 +26,6 @@ requirements:
     - websockets >=7.0
     - jsonschema
     - ruamel.yaml
-    - pyzmq
     - wrapt
     - pandas
     - tabulate
