@@ -1,4 +1,4 @@
-{% set version = "0.19.0" %}
+{% set version = "0.20.0" %}
 
 package:
   name: qcodes
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/QCoDeS/Qcodes/archive/v{{ version }}.tar.gz
-  sha256: 9dcb855870a8a1f8c1a818cae86d7a2d7cd111a6749a64c910b7e3a032a98573
+  sha256: 953158a7a328011ad045ddab6d8f217baea051992b6d3fcf1600e1107cb59020
 
 build:
   number: 0
@@ -15,7 +15,7 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
