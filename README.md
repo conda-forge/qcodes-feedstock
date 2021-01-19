@@ -181,4 +181,5 @@ Feedstock Maintainers
 =====================
 
 * [@basnijholt](https://github.com/basnijholt/)
+* [@jenshnielsen](https://github.com/jenshnielsen/)
 
