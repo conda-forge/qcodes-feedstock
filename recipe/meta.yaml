@@ -9,13 +9,13 @@ source:
   sha256: d21489ce2c0ca13114d07d1287f34fc880f93ac82360c92f8d281fc265ad56b7
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py27]
   skip: true  # [py36]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
