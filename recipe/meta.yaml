@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/QCoDeS/Qcodes/archive/v{{ version }}.tar.gz
-  sha256: 99d9043f8c6edf6cb46b32b1770d3c784be8804ecc0d1b4a8a5e2f6001cf7b6b
+  sha256: f69072b5b8b74832c43969d61a815b15d9e41cf1e349242858816cc6f94e8b81
 
 build:
   number: 0
