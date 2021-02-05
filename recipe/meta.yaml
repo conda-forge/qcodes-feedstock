@@ -1,3 +1,4 @@
+{% set name = "qcodes" %}
 {% set version = "0.22.0" %}
 
 package:
