@@ -1,5 +1,5 @@
 {% set name = "qcodes" %}
-{% set version = "0.22.0" %}
+{% set version = "0.23.0" %}
 
 package:
   name: qcodes
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2aef2191c4b2d0a2ed02bb85373aa6198f9571ca664264de06f5f0a6f59cfc13
+  sha256: d57ac9485cfa5a4ea605e29e2e69d43cc64a9291e7308753b0edce5ceb2bc5e3
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py27]
   skip: true  # [py36]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -22,15 +22,16 @@ requirements:
   run:
     - python
     - numpy >=1.15
-    - pyvisa >=1.10.1, <1.12
+    - pyvisa >=1.11.0, <1.12
     - h5py >=2.8.0
     - websockets >=7.0
     - jsonschema >=3.0.0
     - ruamel.yaml >=0.16.0, !=0.16.6
     - wrapt >=1.10.4
     - pandas >=0.25.0
+    - xarray >=0.16.2
     - tabulate >=0.8.0
-    - tqdm >=4.20.0
+    - tqdm >=4.32.2
     - opencensus >=0.7.10, <0.8.0
     - opencensus-ext-azure >=1.0.4, <2.0.0
     - matplotlib-base >=2.2.3
@@ -40,8 +41,7 @@ requirements:
     - packaging >=20.0
     - ipywidgets >=7.5.0
     - broadbean >=0.9.1
-    - xarray >=0.16.2
-
+    - netCDF4 >=1.5.0.1
 
 test:
   imports:
