@@ -1,5 +1,5 @@
 {% set name = "qcodes" %}
-{% set version = "0.26.0" %}
+{% set version = "0.27.0" %}
 
 package:
   name: qcodes
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 32e629f156a4c5dcbb2d3e790a7781c93ad1bf0f10e70aeee9ae650a6d7630c5
+  sha256: 674a9c9ac0e7d7b4e3e711c757e7178d00a10b9b505cb0bb8c2d3947c0e1958f
 
 build:
   number: 0
@@ -41,7 +41,7 @@ requirements:
     - packaging >=20.0
     - ipywidgets >=7.5.0
     - broadbean >=0.9.1
-    - netCDF4 >=1.5.0.1
+    - h5netcdf >=0.8.0
     - uncertainties >=3.0.2
 
 test:
