@@ -43,7 +43,7 @@ requirements:
     - broadbean >=0.9.1
     - h5netcdf >=0.8.0
     - uncertainties >=3.0.2
-    - setuptools >= 48.0.0
+    - setuptools >=48.0.0
 
 test:
   imports:
