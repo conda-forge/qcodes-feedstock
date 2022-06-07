@@ -10,14 +10,15 @@ source:
   sha256: bf2dc232fa9cc0a9d57d719624b1faa391faa5f4f3bf26a98e108001b5c24787
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py<=36]
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python
     - pip
+    - versioningit
   run:
     - python
     - numpy >=1.17.0
