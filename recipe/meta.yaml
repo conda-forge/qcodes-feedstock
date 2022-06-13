@@ -1,5 +1,5 @@
 {% set name = "qcodes" %}
-{% set version = "0.33.0" %}
+{% set version = "0.34.0" %}
 
 package:
   name: qcodes
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bf2dc232fa9cc0a9d57d719624b1faa391faa5f4f3bf26a98e108001b5c24787
+  sha256: fdbb85c2df6952ef391f312175c05934afb99825e8ba30c786c69e466e0ec302
 
 build:
-  number: 2
+  number: 0
   skip: true  # [py<=36]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -32,7 +32,7 @@ requirements:
     - xarray >=0.18.0
     - tabulate >=0.8.0
     - tqdm >=4.32.2
-    - opencensus >=0.7.10, <0.9.0
+    - opencensus >=0.7.10
     - opencensus-ext-azure >=1.0.4, <2.0.0
     - matplotlib-base >=3.3.0
     - importlib-metadata >=3.6.0,<5.0.0  # [py<38]
