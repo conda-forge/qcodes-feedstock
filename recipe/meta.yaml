@@ -1,5 +1,5 @@
 {% set name = "qcodes" %}
-{% set version = "0.36.1" %}
+{% set version = "0.37.0" %}
 
 package:
   name: qcodes
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fac61be153d7e52b16e39ac70a71407d790b00d15060370e6b707aa3b9b3a345
+  sha256: cd1aa8ef0d2abb7b03691d5d18a19e75e523cf8849cea092f1f138a1e734c873
 
 build:
   number: 0
