@@ -1,11 +1,11 @@
-About qcodes
-============
+About qcodes-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qcodes-feedstock/blob/main/LICENSE.txt)
 
 Home: http://qcodes.github.io/Qcodes
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qcodes-feedstock/blob/main/LICENSE.txt)
 
 Summary: Modular data acquisition and analysis framework
 
