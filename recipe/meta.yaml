@@ -1,5 +1,5 @@
 {% set name = "qcodes" %}
-{% set version = "0.39.1" %}
+{% set version = "0.40.0" %}
 
 package:
   name: qcodes
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: da027f59eca769b88607567aebea9a51b7faff5c2881ffd78c81369820175196
+  sha256: 0bcfe5b57ded4b109b6e17ae7a5dc18c8911065fc4f7694aef4f50631fb614bd
 
 build:
   number: 0
-  skip: true  # [py<=37]
+  skip: true  # [py<=38]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -45,6 +45,7 @@ requirements:
     - h5netcdf >=0.10.0, !=0.14.0
     - setuptools >=48.0.0
     - lazy_loader >=0.1
+    - opentelemetry-api >=1.15.0
 
 test:
   imports:
