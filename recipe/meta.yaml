@@ -10,7 +10,7 @@ source:
   sha256: 0bcfe5b57ded4b109b6e17ae7a5dc18c8911065fc4f7694aef4f50631fb614bd
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<=38]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -57,11 +57,11 @@ about:
   license_file: LICENSE
   summary: Modular data acquisition and analysis framework
   description: |
-    QCoDeS is a Python-based data acquisition framework developed 
-    by the Copenhagen / Delft / Sydney / Microsoft quantum computing 
-    consortium. While it has been developed to serve the needs of 
-    nanoelectronic device experiments, it is not inherently limited 
-    to such experiments, and can be used anywhere a system with many 
+    QCoDeS is a Python-based data acquisition framework developed
+    by the Copenhagen / Delft / Sydney / Microsoft quantum computing
+    consortium. While it has been developed to serve the needs of
+    nanoelectronic device experiments, it is not inherently limited
+    to such experiments, and can be used anywhere a system with many
     degrees of freedom is controllable by computer.
   doc_url: http://qcodes.github.io/Qcodes
   dev_url: https://github.com/QCoDeS/Qcodes
