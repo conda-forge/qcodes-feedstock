@@ -1,5 +1,5 @@
 {% set name = "qcodes" %}
-{% set version = "0.40.0" %}
+{% set version = "0.41.0" %}
 
 package:
   name: qcodes
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0bcfe5b57ded4b109b6e17ae7a5dc18c8911065fc4f7694aef4f50631fb614bd
+  sha256: da2f0a416beb182eea6b21c590c22462e9ab735df6cf984574555028aa3676cc
 
 build:
-  number: 2
+  number: 0
   skip: true  # [py<=38]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -32,7 +32,8 @@ requirements:
     - ruamel.yaml >=0.16.0, !=0.16.6
     - wrapt >=1.10.4
     - pandas >=1.0.0
-    - xarray >=0.18.0
+    - xarray >=2022.06.0
+    - cf_xarray >=0.8.4
     - tabulate >=0.8.0
     - tqdm >=4.32.2
     - opencensus >=0.7.10
@@ -49,6 +50,7 @@ requirements:
     - setuptools >=48.0.0
     - lazy_loader >=0.1
     - opentelemetry-api >=1.15.0
+    - dask >=2022.1.0
 
 test:
   imports:
