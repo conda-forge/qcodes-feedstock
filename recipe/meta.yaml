@@ -69,7 +69,7 @@ about:
     to such experiments, and can be used anywhere a system with many
     degrees of freedom is controllable by computer.
   doc_url: http://microsoft.github.io/Qcodes
-  dev_url: https://github.com/QCoDeS/Qcodes
+  dev_url: https://github.com/microsoft/Qcodes
 
 extra:
   recipe-maintainers:
