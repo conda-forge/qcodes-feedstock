@@ -3,15 +3,15 @@ About qcodes-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qcodes-feedstock/blob/main/LICENSE.txt)
 
-Home: http://qcodes.github.io/Qcodes
+Home: http://microsoft.github.io/Qcodes
 
 Package license: MIT
 
 Summary: Modular data acquisition and analysis framework
 
-Development: https://github.com/QCoDeS/Qcodes
+Development: https://github.com/microsoft/Qcodes
 
-Documentation: http://qcodes.github.io/Qcodes
+Documentation: http://microsoft.github.io/Qcodes
 
 QCoDeS is a Python-based data acquisition framework developed
 by the Copenhagen / Delft / Sydney / Microsoft quantum computing
