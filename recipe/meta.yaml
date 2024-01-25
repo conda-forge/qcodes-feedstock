@@ -10,7 +10,7 @@ source:
   sha256: cbb136d0dc46b4d99ba8823aaed207badc956b0e2fed8efc51f993b468c00d55
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<=38]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -72,6 +72,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - basnijholt
     - jenshnielsen
     - astafan8
     - einsmein
