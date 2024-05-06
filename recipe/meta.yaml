@@ -1,5 +1,5 @@
 {% set name = "qcodes" %}
-{% set version = "0.44.1" %}
+{% set version = "0.45.0" %}
 
 package:
   name: qcodes
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e9bf8c81a3538b54bcd36bf8b2eae790370bc357a9f46dedd4e582c7c75c877b
+  sha256: a7b216084a99abbf515345218ce5156ddec03fac908d9046bf2aa14f11294cca
 
 build:
   number: 0
@@ -27,27 +27,23 @@ requirements:
     - numpy >=1.21.0
     - pyvisa >=1.11.0, <1.14
     - h5py >=3.0.0
-    - websockets >=9.0
-    - jsonschema >=3.2.0
+    - websockets >=9.1
+    - jsonschema >=4.9.0
     - ruamel.yaml >=0.16.0, !=0.16.6
-    - wrapt >=1.10.4
-    - pandas >=1.0.0
+    - wrapt >=1.13.2
+    - pandas >=1.2.0
     - xarray >=2022.06.0
     - cf_xarray >=0.8.4
     - tabulate >=0.8.0
-    - tqdm >=4.32.2
-    - opencensus >=0.7.10
-    - opencensus-ext-azure >=1.0.4, <2.0.0
+    - tqdm >=4.59.0
     - matplotlib-base >=3.3.0
     - importlib-metadata >=4.4.0  # [py<310]
-    - typing_extensions >=4.1.1
+    - typing_extensions >=4.5.0
     - packaging >=20.0
-    - ipywidgets >=7.5.0, <9.0.0
+    - ipywidgets >=8.0.0, <9.0.0
     - broadbean >=0.9.1
     - uncertainties >=3.1.4
     - h5netcdf >=0.10.0, !=0.14.0
-    - setuptools >=48.0.0
-    - lazy_loader >=0.1
     - opentelemetry-api >=1.15.0
     - dask >=2022.1.0
 
