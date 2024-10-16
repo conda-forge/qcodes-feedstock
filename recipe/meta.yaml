@@ -26,12 +26,13 @@ requirements:
   run:
     - python
     - numpy >=1.22.4
-    - pyvisa >=1.11.0, <1.14
+    - pyvisa >=1.11.0, <1.15
     - h5py >=3.6.0
     - websockets >=11.0
     - jsonschema >=4.9.0
     - ruamel.yaml >=0.16.0, !=0.16.6
-    - wrapt >=1.14.0
+    - wrapt >=1.14.0  # [py<312]
+    - wrapt >=1.16.0  # [py>=312]
     - pandas >=1.4.0
     - xarray >=2022.06.0
     - cf_xarray >=0.8.4
