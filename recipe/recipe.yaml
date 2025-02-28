@@ -1,23 +1,29 @@
-{% set name = "qcodes" %}
-{% set version = "0.51.0" %}
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/73cd2eed94c576213c5f25ab57adf6d8c83e792a/schema.json
+schema_version: 1
+
+context:
+  name: qcodes
+  version: 0.51.0
 
 package:
   name: qcodes
-  version: {{ version }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
   sha256: bde9a524adfe0640e6f84ab0e007b4d0c3fca8e7bb8c276db22562dc9467855e
 
 build:
-  number: 0
-  skip: true  # [py<=39]
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
+  skip: match(python, "<=3.9")
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
   host:
     - python
     - pip
@@ -31,8 +37,10 @@ requirements:
     - websockets >=11.0
     - jsonschema >=4.9.0
     - ruamel.yaml >=0.16.0, !=0.16.6
-    - wrapt >=1.14.0  # [py<312]
-    - wrapt >=1.16.0  # [py>=312]
+    - if: match(python, "<3.12")
+      then: wrapt >=1.14.0
+    - if: match(python, ">=3.12")
+      then: wrapt >=1.16.0
     - pandas >=1.4.0
     - xarray >=2022.06.0
     - cf_xarray >=0.8.4
@@ -49,12 +57,12 @@ requirements:
     - dask >=2022.1.0
     - pillow >=9.0.0
 
-test:
-  imports:
-    - qcodes
+tests:
+  - python:
+      imports:
+        - qcodes
 
 about:
-  home: http://microsoft.github.io/Qcodes
   license: MIT
   license_file: LICENSE
   summary: Modular data acquisition and analysis framework
@@ -65,8 +73,9 @@ about:
     nanoelectronic device experiments, it is not inherently limited
     to such experiments, and can be used anywhere a system with many
     degrees of freedom is controllable by computer.
-  doc_url: http://microsoft.github.io/Qcodes
-  dev_url: https://github.com/microsoft/Qcodes
+  homepage: http://microsoft.github.io/Qcodes
+  repository: https://github.com/microsoft/Qcodes
+  documentation: http://microsoft.github.io/Qcodes
 
 extra:
   recipe-maintainers:
