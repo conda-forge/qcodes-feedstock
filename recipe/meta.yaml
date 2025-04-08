@@ -1,5 +1,5 @@
 {% set name = "qcodes" %}
-{% set version = "0.51.0" %}
+{% set version = "0.52.0" %}
 
 package:
   name: qcodes
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bde9a524adfe0640e6f84ab0e007b4d0c3fca8e7bb8c276db22562dc9467855e
+  sha256: add998d3817ff5bbc96665291a615bc230fa39fcac52b19ef315c8f1553c0a6e
 
 build:
   number: 0
@@ -26,11 +26,11 @@ requirements:
   run:
     - python
     - numpy >=1.22.4
-    - pyvisa >=1.11.0, <1.15
+    - pyvisa >=1.11.0,<1.15
     - h5py >=3.6.0
     - websockets >=11.0
     - jsonschema >=4.9.0
-    - ruamel.yaml >=0.16.0, !=0.16.6
+    - ruamel.yaml >=0.16.0,!=0.16.6
     - wrapt >=1.14.0  # [py<312]
     - wrapt >=1.16.0  # [py>=312]
     - pandas >=1.4.0
@@ -41,7 +41,7 @@ requirements:
     - matplotlib-base >=3.5.0
     - typing_extensions >=4.6.0
     - packaging >=20.0
-    - ipywidgets >=8.0.0, <9.0.0
+    - ipywidgets >=8.0.0,<9.0.0
     - broadbean >=0.11.0
     - uncertainties >=3.1.4
     - h5netcdf >=0.14.1
