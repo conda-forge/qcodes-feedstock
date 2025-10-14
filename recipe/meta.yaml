@@ -46,6 +46,7 @@ requirements:
     - opentelemetry-api >=1.17.0
     - dask >=2022.1.0
     - pillow >=9.2.0
+    - networkx >=3.1
 
 test:
   imports:
