@@ -285,5 +285,4 @@ Feedstock Maintainers
 * [@jenshnielsen](https://github.com/jenshnielsen/)
 * [@picarro-yren](https://github.com/picarro-yren/)
 * [@samantha-ho](https://github.com/samantha-ho/)
-* [@trevormorgan](https://github.com/trevormorgan/)
 
