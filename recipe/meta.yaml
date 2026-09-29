@@ -1,5 +1,5 @@
 {% set name = "qcodes" %}
-{% set version = "0.59.0" %}
+{% set version = "0.60.0" %}
 
 package:
   name: qcodes
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 249823792049640820ccad1725d13a8088099598d97db501d42ab59d979afab8
+  sha256: b6cba8f700f2cebcb8398f51ba1bee91b9ab74e40153f4ce914b2f7155f42dca
 
 build:
   number: 0
@@ -21,32 +21,34 @@ requirements:
   host:
     - python
     - pip
-    - versioningit
-    - setuptools
+    - versioningit >=2.2.1
+    - setuptools >=77.0.0
   run:
     - python
-    - numpy >=1.22.4
-    - pyvisa >=1.11.0,<1.17
-    - h5py >=3.8.0
+    - numpy >=1.26.0
+    - pyvisa >=1.12.0,<1.17
+    - h5py >=3.10.0
     - websockets >=11.0
     - jsonschema >=4.9.0
     - ruamel.yaml >=0.16.0,!=0.16.6
-    - pandas >=1.5.0
+    - pandas >=2.1.1
     - xarray >=2023.08.0
     - cf_xarray >=0.8.4
     - tabulate >=0.9.0
     - tqdm >=4.59.0
-    - matplotlib-base >=3.6.0
+    - matplotlib-base >=3.8.0
     - typing_extensions >=4.6.0
     - packaging >=20.0
+    - ipykernel >=6.12.0
     - ipywidgets >=8.0.0,<9.0.0
     - broadbean >=0.11.0
     - uncertainties >=3.2.0
-    - h5netcdf >=0.14.1
+    - h5netcdf >=1.3.0
     - opentelemetry-api >=1.17.0
     - dask >=2022.1.0
-    - pillow >=9.2.0
+    - pillow >=10.2.0
     - networkx >=3.1
+    - pyarrow >=14.0.0
 
 test:
   imports:
