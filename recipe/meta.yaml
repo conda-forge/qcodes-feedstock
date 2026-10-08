@@ -1,5 +1,5 @@
 {% set name = "qcodes" %}
-{% set version = "0.60.0" %}
+{% set version = "0.61.0" %}
 
 package:
   name: qcodes
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b6cba8f700f2cebcb8398f51ba1bee91b9ab74e40153f4ce914b2f7155f42dca
+  sha256: c86bbe99c528821c7226091dbe4ac50846d1d942a06e989f600ba31ce2e9e7cd
 
 build:
   number: 0
