@@ -1,0 +1,121 @@
+schema_version: 1
+
+context:
+  name: qcodes
+  version: "0.61.1"
+
+package:
+  name: qcodes
+  version: ${{ version }}
+
+source:
+  - url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+    sha256: 231c06ca9d39726614ec659fad9968127c1092619d221e35757b0ddc2b99d57c
+  # The sdist omits conftest.py, nested tests, and test data.
+  - url: https://github.com/microsoft/Qcodes/archive/refs/tags/v${{ version }}.tar.gz
+    sha256: dd90d31ac7e31c9462ed5c949b27777dee84c38aa7e929f2c2596e8098e49001
+    target_directory: test-source
+  # Keep this revision aligned with the submodule in the matching QCoDeS tag.
+  - url: https://github.com/QCoDeS/qcodes_db_fixtures/archive/8949196ea30e5583a95edcb64b42d45e3968e862.tar.gz
+    sha256: 67a7fea457de3c2f554a92dbc66b27077f5b578bb9e8abe0c4f71178440e3d34
+    target_directory: test-source/tests/dataset/fixtures/db_files
+
+build:
+  number: 1
+  skip: match(python, "<3.12")
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  build:
+    # macOS CI needs c_stdlib_version for SDK setup, even for pure-Python builds.
+    - if: osx
+      then: ${{ stdlib('c') }}
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+  host:
+    - python
+    - pip
+    - versioningit >=2.2.1
+    - setuptools >=77.0.0
+  run:
+    - python
+    - numpy >=1.26.0
+    - pyvisa >=1.12.0,<1.17
+    - h5py >=3.10.0
+    - websockets >=11.0
+    - jsonschema >=4.9.0
+    - ruamel.yaml >=0.16.0,!=0.16.6
+    - pandas >=2.1.1
+    - xarray >=2023.08.0
+    - cf_xarray >=0.8.4
+    - tabulate >=0.9.0
+    - tqdm >=4.59.0
+    - matplotlib-base >=3.8.0
+    - typing_extensions >=4.6.0
+    - packaging >=20.0
+    - ipykernel >=6.12.0
+    - ipywidgets >=8.0.0,<9.0.0
+    - broadbean >=0.11.0
+    - uncertainties >=3.2.0
+    - h5netcdf >=1.3.0
+    - opentelemetry-api >=1.17.0
+    - dask >=2022.1.0
+    - pillow >=10.2.0
+    - networkx >=3.1
+    - pyarrow >=14.0.0
+
+tests:
+  - python:
+      imports:
+        - qcodes
+      pip_check: false
+  - script:
+      - cd test-source
+      # Disable upstream's parallel/coverage defaults and include serial tests.
+      # The legacy importer requires qcodes_loop, which is not on conda-forge.
+      - >-
+        python -m pytest -v -o addopts="" --hypothesis-profile=ci
+        --ignore=tests/dataset/measurement/test_load_legacy_data.py tests
+    requirements:
+      run:
+        - pip
+        - pytest >=8.2.0
+        - pytest-asyncio >=0.24.0
+        - pytest-mock >=3.13.0
+        - pytest-rerunfailures >=14.0
+        - hypothesis >=6.130.0
+        - pyvisa-sim >=0.6.0
+        - lxml >=4.9.4
+        - sphinx >=4.5.0
+        - parso >=0.8.6
+        - libcst >=1.2.0
+    files:
+      source:
+        - test-source/tests/
+        - test-source/pyproject.toml
+
+about:
+  homepage: http://microsoft.github.io/Qcodes
+  license: MIT
+  license_file: LICENSE
+  summary: Modular data acquisition and analysis framework
+  description: |
+    QCoDeS is a Python-based data acquisition framework developed
+    by the Copenhagen / Delft / Sydney / Microsoft quantum computing
+    consortium. While it has been developed to serve the needs of
+    nanoelectronic device experiments, it is not inherently limited
+    to such experiments, and can be used anywhere a system with many
+    degrees of freedom is controllable by computer.
+  documentation: http://microsoft.github.io/Qcodes
+  repository: https://github.com/microsoft/Qcodes
+
+extra:
+  recipe-maintainers:
+    - basnijholt
+    - jenshnielsen
+    - astafan8
+    - einsmein
+    - picarro-yren
+    - samantha-ho
