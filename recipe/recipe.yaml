@@ -9,8 +9,16 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 231c06ca9d39726614ec659fad9968127c1092619d221e35757b0ddc2b99d57c
+  - url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+    sha256: 231c06ca9d39726614ec659fad9968127c1092619d221e35757b0ddc2b99d57c
+  # The sdist omits conftest.py, nested tests, and test data.
+  - url: https://github.com/microsoft/Qcodes/archive/refs/tags/v${{ version }}.tar.gz
+    sha256: dd90d31ac7e31c9462ed5c949b27777dee84c38aa7e929f2c2596e8098e49001
+    target_directory: test-source
+  # Keep this revision aligned with the submodule in the matching QCoDeS tag.
+  - url: https://github.com/QCoDeS/qcodes_db_fixtures/archive/8949196ea30e5583a95edcb64b42d45e3968e862.tar.gz
+    sha256: 67a7fea457de3c2f554a92dbc66b27077f5b578bb9e8abe0c4f71178440e3d34
+    target_directory: test-source/tests/dataset/fixtures/db_files
 
 build:
   number: 1
@@ -63,6 +71,30 @@ tests:
       imports:
         - qcodes
       pip_check: false
+  - script:
+      - cd test-source
+      # Disable upstream's parallel/coverage defaults and include serial tests.
+      # The legacy importer requires qcodes_loop, which is not on conda-forge.
+      - >-
+        python -m pytest -v -o addopts="" --hypothesis-profile=ci
+        --ignore=tests/dataset/measurement/test_load_legacy_data.py tests
+    requirements:
+      run:
+        - pip
+        - pytest >=8.2.0
+        - pytest-asyncio >=0.24.0
+        - pytest-mock >=3.13.0
+        - pytest-rerunfailures >=14.0
+        - hypothesis >=6.130.0
+        - pyvisa-sim >=0.6.0
+        - lxml >=4.9.4
+        - sphinx >=4.5.0
+        - parso >=0.8.6
+        - libcst >=1.2.0
+    files:
+      source:
+        - test-source/tests/
+        - test-source/pyproject.toml
 
 about:
   homepage: http://microsoft.github.io/Qcodes
