@@ -16,6 +16,8 @@ build:
 
 requirements:
   build:
+    # macOS CI needs c_stdlib_version for SDK setup, even for pure-Python builds.
+    - {{ stdlib('c') }}  # [osx]
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
