@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: qcodes
-  version: "0.62.0"
+  version: "0.63.0"
 
 package:
   name: qcodes
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 5b89a86a2bd66c1e1f47efea1c9f98e7ec01e2dc711640aefcf37af69acd86f3
+  sha256: afb0d9c58d59d74ac6d01a09048603a485b55acd91552f51270053dd38c0aecc
 
 build:
   number: 0
